@@ -23,6 +23,14 @@ class Database {
         return $query;
     }
 
+    public function getFirstTen() {
+        $sql = "SELECT * from " . $this->table. " order by id DESC LIMIT 10";
+        $query = $this->connection->prepare($sql);
+        $query->execute();
+
+        return $query;
+    }
+
     public function post()
     {
         $sql = "INSERT INTO " .$this->table. " SET date_message = NOW(), user = :user, content = :content";

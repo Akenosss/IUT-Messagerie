@@ -11,22 +11,19 @@ include_once '../config/login.php';
 
     $phrases = new \models\Database($db);
 
-    $stmt = $phrases->getAll();
+    $stmt = $phrases->getFirstTen();
 
     $tab = [];
     $tab['messages'] = [];
 
     while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-        extract($row);
-
         $cont = [
-        "id"            => $id,
-        "date_message"  => $date_message,
-        "user"          => $user,
-        "content"       => $content
+            "id"            => $row['id'],
+            "date_message"  => $row['date_message'],
+            "user"          => $row['user'],
+            "content"       => $row['content']
         ];
-
         $tab['messages'][] = $cont;
-        }
+    }
 
     echo json_encode($tab);
