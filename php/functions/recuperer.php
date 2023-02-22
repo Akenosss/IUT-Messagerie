@@ -1,5 +1,9 @@
 <?php
-    include_once '../config/login.php';
+
+use config\login;
+use models\Database;
+
+include_once '../config/login.php';
     include_once '../models/Database.php';
 
     $database = new login();
