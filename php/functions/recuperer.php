@@ -3,13 +3,13 @@
 use config\login;
 use models\Database;
 
-include_once '../config/login.php';
-    include_once '../models/Database.php';
+    include_once ('../config/login.php');
+    include_once ('../models/Database.php');
 
     $database = new login();
     $db = $database->getConnection();
 
-    $phrases = new \models\Database($db);
+    $phrases = new Database($db);
 
     $stmt = $phrases->getFirstTen();
 
@@ -26,4 +26,15 @@ include_once '../config/login.php';
         $tab['messages'][] = $cont;
     }
 
-    echo json_encode($tab);
+    deliver_response(200,"Done", $tab['messages']);
+
+
+    function deliver_response($status, $status_message, $data) {
+        header("HTTP/1.1 $status $status_message");
+        $response['status'] = $status;
+        $response['status_message'] = $status_message;
+        $response['data'] = $data;
+
+        $json_response = json_encode($response);
+        echo $json_response;
+    }

@@ -1,6 +1,6 @@
 <?php
-    $user = htmlspecialchars($_GET['user']);
-    $content = htmlspecialchars($_GET['content']);
+    $user = htmlspecialchars($_POST['user']);
+    $content = htmlspecialchars($_POST['content']);
 
     use config\login;
     use models\Database;
