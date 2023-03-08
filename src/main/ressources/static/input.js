@@ -1,7 +1,8 @@
-setInterval(reload(), 2000);
-function reload() {
-    $("#list-messages").load(location.href + "#list-messages");
-}
+$(document).ready(function() {
+   var refresh = setInterval(function() {
+      $("#list-messages").load('listmessages.php');
+   }, 2000);
+});
 
 const url = "http://localhost/git/chat/IUT-Messagerie/php/exports/enregistrer.php";
 function post() {
@@ -15,4 +16,5 @@ function post() {
             content: content
         },
     );
+    $("body").load('#');
 }
