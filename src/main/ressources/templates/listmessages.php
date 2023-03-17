@@ -5,11 +5,11 @@
     foreach ($tab['data'] as $t):
 ?>
     <div class="main-content">
-        <div class="content">
+        <div class="message-content">
             <span><strong><?= $t['user']?></strong></span>
             <span class="message"><?= $t['content']?></span>
         </div>
-        <span><?= $t['date_message'] ?></span>
+<!--        <span><?php /*= $t['date_message'] */?></span> -->
     </div>
 
 <?php endforeach; ?>
