@@ -4,8 +4,12 @@
 
     foreach ($tab['data'] as $t):
 ?>
-
-    <p><span><strong><?= $t['user']?></strong></span>
-    <span class="message"><?= $t['content']?></span></p>
+    <div class="main-content">
+        <div class="content">
+            <span><strong><?= $t['user']?></strong></span>
+            <span class="message"><?= $t['content']?></span>
+        </div>
+        <span><?= $t['date_message'] ?></span>
+    </div>
 
 <?php endforeach; ?>

@@ -1,0 +1,28 @@
+body {
+    background-color: #dadada;
+    padding: 20px 0 0 400px;
+}
+
+.main {
+    height: 95vh;
+    width: 900px;
+    display: flex;
+    flex-direction: column;
+}
+
+#list-messages {
+    margin: 50px 0 50px 0;
+}
+
+.message-input {
+    display: flex;
+    flex-direction: row;
+}
+
+.text-input input {
+    width: 400px;
+}
+
+.message-input input {
+    padding: 16px;
+}
