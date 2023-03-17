@@ -1,0 +1,46 @@
+body {
+    background-color: #dadada;
+    padding: 20px 0 0 400px;
+}
+
+.main {
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    height: 60px;
+    margin-bottom: 30px;
+}
+
+.message {
+    width: fit-content;
+    border: 1px black solid;
+    border-radius: 3px;
+    padding: 10px;
+}
+
+#list-messages {
+    height: 500px;
+    margin: 50px 0 50px 0;
+    overflow: scroll;
+}
+
+.message-input {
+    display: flex;
+    flex-direction: row;
+}
+
+.text-input input {
+    width: 450px;
+}
+
+.message-input input {
+    padding: 16px;
+}
+
+.message-content {
+    display: flex;
+    flex-direction: column;
+}
