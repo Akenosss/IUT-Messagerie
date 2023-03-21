@@ -1,17 +1,12 @@
 body {
     background-color: #dadada;
-    padding: 20px 0 0 400px;
+    padding: 20px 0 0 280px;
 }
 
 .main {
     width: 1000px;
     display: flex;
     flex-direction: column;
-}
-
-.main-content {
-    height: 60px;
-    margin-bottom: 30px;
 }
 
 .message {
@@ -30,10 +25,11 @@ body {
 .message-input {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 
-.text-input input {
-    width: 450px;
+#content {
+    width: 90%;
 }
 
 .message-input input {
@@ -41,6 +37,8 @@ body {
 }
 
 .message-content {
+    height: 60px;
+    margin-bottom: 30px;
     display: flex;
     flex-direction: column;
 }

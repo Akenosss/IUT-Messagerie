@@ -1,8 +1,8 @@
-/*$(document).ready(function() {
+$(document).ready(function() {
    var refresh = setInterval(function() {
       $("#list-messages").load('listmessages.php');
    }, 2000);
-});*/
+});
 
 const urlPOST = "http://localhost/git/chat/IUT-Messagerie/php/exports/enregistrer.php";
 function post() {

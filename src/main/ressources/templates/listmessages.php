@@ -2,14 +2,20 @@
     $result = file_get_contents('http://localhost/git/chat/IUT-Messagerie/php/functions/recuperer.php', true);
     $tab = json_decode($result, true);
 
-    foreach ($tab['data'] as $t):
+    $newTab = [];
+    $tabLength = count($tab['data'])-1;
+    for($i=$tabLength; $i>-1 ; $i--) {
+        $newTab[$i] = $tab['data'][$i];
+    }
+
+    foreach ($newTab as $t):
 ?>
-    <div class="main-content">
-        <div class="message-content">
+    <div class="message-content">
+        <div class="uclock">
             <span><strong><?= $t['user']?></strong></span>
-            <span class="message"><?= $t['content']?></span>
+            <span><?= $t['date_message'] ?></span>
         </div>
-<!--        <span><?php /*= $t['date_message'] */?></span> -->
+        <span class="message"><?= $t['content']?></span>
     </div>
 
 <?php endforeach; ?>

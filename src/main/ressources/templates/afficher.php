@@ -1,3 +1,9 @@
+<?php
+    $pseudo = htmlspecialchars($_GET['pseudo']);
+    if($_COOKIE['active_session'] == null){
+        header("Location:index.php");
+    }
+?>
 <!doctype html>
 <html lang="fr">
 <head>
@@ -11,16 +17,13 @@
     <title>ChatBox</title>
 </head>
     <body>
-        <?php require("./sidebar.php"); ?>
         <div class="main">
             <div id="list-messages">
                 <?php include("./listmessages.php"); ?>
             </div>
             <div class="message-input">
-                <div class="text-input">
-                    <input type="text" id="user" placeholder="Your name"/>
-                    <input type="text" id="content" placeholder="Type something..."/>
-                </div>
+                <input type="hidden" id="user" value="<?= $pseudo ?>"/>
+                <input type="text" id="content" placeholder="Type something..."/>
                 <input type="submit" value="Enter" onclick="post();"/>
             </div>
         </div>
