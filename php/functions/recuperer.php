@@ -11,7 +11,7 @@ use models\Database;
 
     $phrases = new Database($db);
 
-    $stmt = $phrases->getFirstTen();
+    $stmt = $phrases->get();
 
     $tab = [];
     $tab['messages'] = [];

@@ -3,7 +3,7 @@
     $tab = json_decode($result, true);
 
     $newTab = [];
-    $tabLength = count($tab['data'])-1;
+    $tabLength = count($tab['data'])-14;
     for($i=$tabLength; $i>-1 ; $i--) {
         $newTab[$i] = $tab['data'][$i];
     }

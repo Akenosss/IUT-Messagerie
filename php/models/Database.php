@@ -14,17 +14,9 @@ class Database {
         $this->connection = $db;
     }
 
-    public function getAll()
+    public function get()
     {
-        $sql = "SELECT * from " . $this->table;
-        $query = $this->connection->prepare($sql);
-        $query->execute();
-
-        return $query;
-    }
-
-    public function getFirstTen() {
-        $sql = "SELECT * from " . $this->table. " order by id DESC LIMIT 10";
+        $sql = "SELECT * from " . $this->table. " order by id DESC";
         $query = $this->connection->prepare($sql);
         $query->execute();
 
