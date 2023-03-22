@@ -19,7 +19,6 @@
     <h1>Welcome to the chat !</h1>
     <form method="post">
         <input type="text" name="pseudo" placeholder="Your pseudo" required/>
-        <input type="password" name="passwd" placeholder="Your password" required/>
         <input type="submit" value="Validate" name="login"/>
     </form>
 </body>
