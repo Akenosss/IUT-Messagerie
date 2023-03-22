@@ -3,6 +3,10 @@
     if($_COOKIE['active_session'] == null){
         header("Location:index.php");
     }
+
+    if(isset($_POST['logout'])) {
+        header("Location: ./index.php");
+    }
 ?>
 <!doctype html>
 <html lang="fr">
@@ -18,6 +22,12 @@
 </head>
     <body>
         <div class="main">
+            <div class="logout">
+                <form method="post">
+                    <span>Log in as : <?= $pseudo ?></span>
+                    <input type="submit" name="logout" value="Log out"/>
+                </form>
+            </div>
             <div id="list-messages">
                 <?php include("./listmessages.php"); ?>
             </div>
