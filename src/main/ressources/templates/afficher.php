@@ -1,11 +1,8 @@
 <?php
     $pseudo = htmlspecialchars($_GET['pseudo']);
-    if($_COOKIE['active_session'] == null){
-        header("Location:index.php");
-    }
 
     if(isset($_POST['logout'])) {
-        header("Location: ./index.php");
+        header("Location: ../../../index.php");
     }
 ?>
 <!doctype html>
@@ -20,22 +17,22 @@
     <link rel="stylesheet" href="../static/css/afficher.css"/>
     <title>ChatBox</title>
 </head>
-    <body>
-        <div class="main">
-            <div class="logout">
-                <form method="post">
-                    <span>Log in as : <?= $pseudo ?></span>
-                    <input type="submit" name="logout" value="Log out"/>
-                </form>
-            </div>
-            <div id="list-messages">
-                <?php include("./listmessages.php"); ?>
-            </div>
-            <div class="message-input">
-                <input type="hidden" id="user" value="<?= $pseudo ?>"/>
-                <input type="text" id="content" placeholder="Type something..."/>
-                <input type="submit" value="Enter" onclick="post();"/>
-            </div>
-        </div>
-    </body>
+<body>
+<div class="main">
+    <div class="logout">
+        <form method="post">
+            <span>Log in as : <?= $pseudo ?></span>
+            <input type="submit" name="logout" value="Log out"/>
+        </form>
+    </div>
+    <div id="list-messages">
+        <?php include("./listmessages.php"); ?>
+    </div>
+    <div class="message-input">
+        <input type="hidden" id="user" value="<?= $pseudo ?>"/>
+        <input type="text" id="content" placeholder="Type something..."/>
+        <input type="submit" value="Enter" onclick="post();"/>
+    </div>
+</div>
+</body>
 </html>

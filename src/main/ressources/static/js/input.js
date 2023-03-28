@@ -1,10 +1,11 @@
 $(document).ready(function() {
-   var refresh = setInterval(function() {
-      $("#list-messages").load('listmessages.php');
-   }, 2000);
+    var refresh = setInterval(function() {
+        $("#list-messages").load('listmessages.php');
+        alert(login);
+    }, 2000);
 });
 
-const urlPOST = "http://localhost/git/chat/IUT-Messagerie/php/exports/enregistrer.php";
+const urlPOST = "https://interactivechatbox.000webhostapp.com/php/exports/enregistrer.php";
 function post() {
     let user = document.getElementById("user").value;
     let content = document.getElementById("content").value;
@@ -14,9 +15,10 @@ function post() {
         {
             user: user,
             content: content
-        },
+        }
     );
 
+    document.getElementById("#list-messages").scrollTo(0,offsetHeight * 1.5);
     $("body").load('#');
 }
 
@@ -25,3 +27,8 @@ addEventListener("keyup", function(event) {
         post();
     }
 });
+
+function scroll() {
+    var scr =document.getElementById("list-messages");
+    scr.scrollTop = scr.scrollHeight-scr.offsetHeight;
+}

@@ -4,10 +4,10 @@
     use PDO;
     use PDOException;
     class login {
-        private $server = "127.0.0.1";
-        private $dbname = "messagerie";
-        private $name   = "root";
-        private $passwd = "";
+        private $server = "localhost";
+        private $dbname = "id20488745_chatbox";
+        private $name   = "id20488745_root";
+        private $passwd = "er{CX*]z#!1fo<o}";
         public $connection;
 
         public function getConnection() {
